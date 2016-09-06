@@ -7,5 +7,11 @@
     <h1>{{ today | date:'a' }}</h1>
     <h1>{{ today | date:'Z' }}</h1>
     <h1>{{ today | date:'MMM d, y' }}</h1>
+    <h1>{{ ['Ari', 'Lerner', 'Likes', 'To', 'Eat', 'Pizza'] | filter: 'e' }}</h1>
+    <h1>{{ 'San Francisco is very cloudy' | limitTo: 3 }}</h1>
+    <h1>{{ 'San Francisco is very cloudy' | limitTo: -6 }}</h1>
+    <h1>{{ [{ 'name':'Ari' }, { 'name':'Q' }, { 'name':'Nate' }] | orderBy: 'name' }}</h1>
+    <h1>{{ [{ 'name':'Ari' }, { 'name':'Q' }, { 'name':'Nate' }] | orderBy: 'name':true }}</h1>
+    <h1>{{ 'ginger loves dog treats' | lowercase | capitalize }}</h1>
 
 </div>

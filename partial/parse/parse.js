@@ -20,6 +20,6 @@ angular.module('angularLearn').controller('ParseCtrl',function($scope, $parse, $
 
             $scope.previewText = template({ to:$scope.to });
         }
-    })
+    });
 
 });

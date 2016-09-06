@@ -14,6 +14,10 @@ angular.module('angularLearn').config(function($stateProvider, $urlRouterProvide
         url: '/filters',
         templateUrl: 'partial/filters/filters.html'
     });
+    $stateProvider.state('form-validation', {
+        url: '/form-validation',
+        templateUrl: 'partial/form-validation/form-validation.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 
