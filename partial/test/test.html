@@ -1,0 +1,11 @@
+<div class="col-md-12" ng-controller="TestCtrl">
+
+    <h1>{{ person.name }}</h1>
+
+    <div ng-controller="ParentCtrl">
+        <div ng-controller="ChildCtrl">
+            <a ng-click="sayHello()">{{ person }}</a>
+        </div>
+    </div>
+
+</div>
