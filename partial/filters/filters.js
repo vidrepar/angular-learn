@@ -16,7 +16,7 @@ angular.module('angularLearn')
 
             }
 
-        }
+        };
 
     })
 

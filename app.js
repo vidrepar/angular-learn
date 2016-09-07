@@ -18,6 +18,10 @@ angular.module('angularLearn').config(function($stateProvider, $urlRouterProvide
         url: '/form-validation',
         templateUrl: 'partial/form-validation/form-validation.html'
     });
+    $stateProvider.state('signup-form', {
+        url: '/signup-form',
+        templateUrl: 'partial/signup-form/signup-form.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 
