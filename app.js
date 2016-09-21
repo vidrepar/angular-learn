@@ -1,4 +1,9 @@
-angular.module('angularLearn', ['ui.bootstrap','ui.router','ngAnimate']);
+angular.module('angularLearn', [
+    'ui.bootstrap',
+    'ui.router',
+    'ngAnimate',
+    'ngMessages'
+]);
 
 angular.module('angularLearn').config(function($stateProvider, $urlRouterProvider) {
 
