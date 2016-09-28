@@ -1,0 +1,70 @@
+<div class="col-md-12" ng-controller="BuiltinDirectivesCtrl">
+
+    <br/>
+    <input
+        class="form-control"
+        type="text"
+        ng-model="someProperty"
+        placeholder="Type to Enable"
+    >
+    <br/>
+    <button class="btn btn-primary" ng-model="button" ng-disabled="!someProperty">A button</button>
+
+    <br/>
+    <br/>
+    <textarea
+        class="form-control"
+        ng-disabled="isDisabled"
+    >Wait 5 seconds</textarea>
+
+    <br/>
+    Type here to make sibling readonly
+    <input class="form-control" type="text" ng-model="someProperty"><br/>
+    <input class="form-control" type="text" ng-readonly="someProperty" value="Some text here">
+
+    <br/>
+    <label>checkProperty = {{ checkProperty }}</label>
+    <input
+        class="form-control"
+        type="checkbox"
+        ng-checked="checkProperty"
+        ng-init="checkProperty = true"
+        ng-model="checkProperty"
+    >
+
+    <br/>
+    <label>anotherProperty = {{ anotherProperty }}</label>
+    <input
+        class="form-control"
+        type="checkbox"
+        ng-checked="anotherProperty"
+        ng-init="anotherProperty = false"
+        ng-model="anotherProperty"
+    >
+
+    <br/>
+    <label>Select Two Fish:</label>
+    <input
+        type="checkbox"
+        ng-init="isTwoFish = true"
+        ng-model="isTwoFish"
+    ><br/>
+    <select>
+        <option>One Fish</option>
+        <option
+            ng-selected="isTwoFish"
+        >Two Fish</option>
+    </select>
+
+    <br/>
+    <a ng-href="{{ myHref }}">I'm feeling lucky when I load</a>
+    <a href="{{ myHref }}">I'm feeling 404</a>
+
+    <br/>
+    <h1>Wrong way</h1>
+    <img src="{{ imgSrc }}">
+
+    <h1>Right way</h1>
+    <img ng-src="{{ imgSrc }}">
+
+</div>

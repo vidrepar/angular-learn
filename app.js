@@ -31,6 +31,10 @@ angular.module('angularLearn').config(function($stateProvider, $urlRouterProvide
         url: '/directive-intro',
         templateUrl: 'partial/directive-intro/directive-intro.html'
     });
+    $stateProvider.state('builtin-directives', {
+        url: '/builtin-directives',
+        templateUrl: 'partial/builtin-directives/builtin-directives.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 
