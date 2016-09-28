@@ -1,0 +1,39 @@
+<div class="col-md-12" ng-controller="DirectiveIntroCtrl">
+
+    <!--<my-directive></my-directive>
+    <div my-directive></div>
+    <div class="my-directive"></div>
+    &lt;!&ndash; directive: my-directive &ndash;&gt;
+
+    <my-directive someAttribute="someExpression"></my-directive>
+    <div my-directive="someExpression"></div>
+    <div class="my-directive:someExpression"></div>
+    &lt;!&ndash; directive: my-directive someExpression &ndash;&gt;
+
+    <div
+        my-directive my-url="http://google.com"
+        my-link-text="Click me to go to Google"
+        some-property="some property with @ binding"
+    ></div>
+
+    <input
+        type="text"
+        ng-model="myUrl"/>
+    <div
+        my-directive
+        some-attr="{{ myUrl }}"
+        my-link-text="Click me to go to Google"
+    ></div>
+
+    <br/>
+    <br/>-->
+
+    <label>Their URL field:</label>
+    <input type="text" ng-model="theirUrl">
+    <div
+        my-directive
+        some-attr="theirUrl"
+        my-link-text="Click me to go to Google"
+    ></div>
+
+</div>

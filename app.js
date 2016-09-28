@@ -27,6 +27,10 @@ angular.module('angularLearn').config(function($stateProvider, $urlRouterProvide
         url: '/signup-form',
         templateUrl: 'partial/signup-form/signup-form.html'
     });
+    $stateProvider.state('directive-intro', {
+        url: '/directive-intro',
+        templateUrl: 'partial/directive-intro/directive-intro.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 

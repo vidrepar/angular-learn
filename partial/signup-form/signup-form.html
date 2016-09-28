@@ -5,6 +5,7 @@
         novalidate
         ng-submit="signupForm()"
         ng-controller="SignupFormCtrl"
+        ensure-unique="/api/checkUsername.json"
     >
 
         <fieldset>
@@ -15,9 +16,9 @@
                 <label>Your name</label>
                 <input
                     type="text"
-                    placeholder="Name"
-                    name="name"
-                    ng-model="signup.name"
+                    placeholder="Username"
+                    name="username"
+                    ng-model="signup.username"
                     ng-minlength="3"
                     ng-maxlength="20"
                     required
@@ -25,18 +26,31 @@
                 />
                 <div
                     class="error"
-                    ng-messages="signup_form.name.$error"
+                    ng-messages="signup_form.username.$error"
                     >
+<!--
                     <div ng-messages-include="partial/templates/errors.html">
+-->
 
                     </div>
 
-                    <div ng-message="minlength">
-                        Your name is required to be at least 3 characters
+                    <div ng-message="required">
+                        Make sure you enter your username
                     </div>
+
+                    <div ng-message="checkingAvailabilty">
+                        Checking...
+                    </div>
+
+
+                    <div ng-message="usernameAvailability">
+                        The username has already been taken.
+                        Please choose another
+                    </div>
+
                 </div>
             </div>
-        </div>
+        <!--</div>-->
 
        <!-- <div class="row">
             <div class="columns">
