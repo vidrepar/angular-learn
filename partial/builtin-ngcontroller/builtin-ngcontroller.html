@@ -1,0 +1,69 @@
+
+
+<div
+    ng-init="myProperty = 'wow this is very very cool'"
+>
+
+    <div my-inherit-scope-directive></div>
+    <div g-directive></div>
+
+</div>
+
+
+
+
+
+
+
+<div
+    ng-controller="IsController"
+>
+    Outside iDirective:{{ myProperty }}
+    <div
+        i-directive
+        ng-init="myProperty = 'wow, this is very cool
+        '"
+    ></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div
+    ng-app="angularLearn"
+    ng-init="someProperty = 'some data'"
+>
+
+    <div
+        ng-init="siblingProperty = 'more data'"
+    >
+        Inside Div Two: {{ aThirdProperty }}
+        <div
+            ng-init="aThirdProperty = 'data for 3rd property'"
+            ng-controller="SomeController"
+        >
+            Inside Div Three: {{ aThirdProperty }}
+            <div
+                ng-init="aFourthProperty"
+                ng-controller="SecondController"
+            >
+                Inside Div Four: {{ aThirdProperty }}
+                <br/>
+                Outside mDirective: {{ myProperty }}
+                <div
+                    m-directive
+                    ng-init="myProperty = 'wow, this is cool'"
+                >
+                    Inside mDirective: {{ myProperty }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

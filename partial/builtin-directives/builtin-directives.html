@@ -1,5 +1,34 @@
 <div class="col-md-12" ng-controller="BuiltinDirectivesCtrl">
 
+    <!-- ng-repeat -->
+    <ul ng-controller="PeopleController">
+        <li ng-repeat="person in people" ng-class="{even:!$even, odd:!$odd}">
+            {{ person.name }} lives in {{ person.city }}
+        </li>
+    </ul>
+
+    <!-- ng-switch -->
+    <input type="text" ng-model="person.name"/>
+    <div ng-switch on="person.name">
+        <p ng-switch-default>And the winner is</p>
+        <h1 ng-switch-when="Ari">{{ person.name }}</h1>
+    </div>
+
+    {{ someBearValue }}
+    <button ng-click="someAction()">Communicate to child</button>
+    <div ng-controller="ChildController">
+        {{ someBearValue }}
+        <button ng-click="childAction()">Communicate to parent</button>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+
+    {{ someModel.someProperty }}
+    <button ng-click="someAction()">Communicate</button>
+
+    <br/>
+    <br/>
     <br/>
     <input
         class="form-control"

@@ -35,6 +35,26 @@ angular.module('angularLearn').config(function($stateProvider, $urlRouterProvide
         url: '/builtin-directives',
         templateUrl: 'partial/builtin-directives/builtin-directives.html'
     });
+    $stateProvider.state('form-controller', {
+        url: '/form-controller',
+        templateUrl: 'partial/form-controller/form-controller.html'
+    });
+    $stateProvider.state('counter', {
+        url: '/counter',
+        templateUrl: 'partial/counter/counter.html'
+    });
+    $stateProvider.state('builtin-ngcontroller', {
+        url: '/builtin-ngcontroller',
+        templateUrl: 'partial/builtin-ngcontroller/builtin-ngcontroller.html'
+    });
+    $stateProvider.state('poke-holes', {
+        url: '/poke-holes',
+        templateUrl: 'partial/poke-holes/poke-holes.html'
+    });
+    $stateProvider.state('custom-validation', {
+        url: '/custom-validation',
+        templateUrl: 'partial/custom-validation/custom-validation.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 

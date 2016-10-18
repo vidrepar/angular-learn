@@ -1,0 +1,14 @@
+<div class="col-md-12" ng-controller="CustomValidationCtrl">
+
+    <input
+        type="text"
+        placeholder="Desired  username"
+        name="username"
+        ng-model="signup.username"
+        ng-minlength="3"
+        ng-maxlength="20"
+        ensure-uniquesec="username"
+        required
+    />
+
+</div>
