@@ -5,7 +5,8 @@ angular.module('angularLearn', [
     'ngMessages'
 ]);
 
-angular.module('angularLearn').config(function($stateProvider, $urlRouterProvider) {
+angular.module('angularLearn')
+    .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('test', {
         url: '/test',
@@ -55,6 +56,14 @@ angular.module('angularLearn').config(function($stateProvider, $urlRouterProvide
         url: '/custom-validation',
         templateUrl: 'partial/custom-validation/custom-validation.html'
     });
+
+    $stateProvider.state('module-loading', {
+        url: '/module-loading',
+        controller: 'SomeCtrl',
+        //controller: 'ModuleLoadingCtrl',
+        templateUrl: 'partial/module-loading/module-loading.html'
+    });
+
     /* Add New States Above */
     $urlRouterProvider.otherwise('/');
 

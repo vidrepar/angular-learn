@@ -1,0 +1,17 @@
+<label
+    for="username"
+>Type in a Github username</label>
+<input
+    type="text"
+    id="username"
+    ng-model="username"
+    placeholder="Enter a Github username"
+/>
+<ul>
+    <li
+        ng-repeat="event in events"
+        {{ event | json }}
+        {{ event.actor.login }}  {{ event.repo.name }}
+        <pre>{{ event }}</pre>
+    ></li>
+</ul>

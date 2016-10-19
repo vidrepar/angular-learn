@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="angularLearn">
-<head>
+<base>
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
@@ -45,7 +45,23 @@
   <script src="partial/builtin-ngcontroller/is-controller.js"></script>
   <script src="partial/poke-holes/poke-holes.js"></script>
   <script src="partial/custom-validation/custom-validation.js"></script>
+  <script src="partial/module-loading/module-loading.js"></script>
   <!-- Add New Component JS Above -->
+
+
+
+  <header>
+      <h1>Header</h1>
+  </header>
+  <div class="content">
+      <div ui-view></div>
+  </div>
+  <footer>
+      <h5>Footer</h5>
+  </footer>
+
+
+
 
   <div>
     <div id="content" class="container">
