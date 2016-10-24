@@ -2,19 +2,184 @@ angular.module('angularLearn', [
     'ui.bootstrap',
     'ui.router',
     'ngAnimate',
-    'ngMessages'
+    'ngMessages',
+    'ngResource',
+    'restangular'
 ]);
 
 angular.module('angularLearn')
-    .config(function($stateProvider, $urlRouterProvider) {
+    .factory('GithubService', function ($q, $http) {
+
+        var deferred = $q.defer();
+
+        deferred.resolve({
+            name: 'Ari',
+            username: 'auser'
+        });
+
+        deferred.reject('Cant update user');
+
+    })
+    .constant('apiKey', 'YOUR_API_KEY')
+    /*.factory('Auth', function ($cookieStore, ACCESS_LEVELS, RestangularProvider, apiKey) {
+
+
+
+        RestangularProvider
+            .setBaseUrl('https://api.mongolab.com/api/1/databases/YOUR_DB/collections')
+            .setDefaultRequestParams({
+                apiKey:apiKey
+            })
+            .setRestangularFields({
+                id:'_id.$oid'
+            })
+            .setRequestInterceptor(function (elem, operation, what) {
+
+                if (operation === 'put') {
+
+                    elem._id = undefined;
+                    return elem;
+
+                }
+
+                return elem;
+
+            })
+
+        ;
+
+
+
+
+
+
+
+
+        var _user = $cookieStore.get('user');
+
+        /!*var setUser = function (user) {
+
+            if(!user.role || user.role <0) {
+
+                user.role = ACCESS_LEVELS.pub;
+
+            }
+
+            _user = user;
+
+            $cookieStore.put('user', _user);
+
+            return {
+                isAuthorized: function (1v1) {
+
+                    return _user.role >= 1;
+
+                }/!*,
+                setUser: setUser,*!/
+
+
+
+            }
+
+        }*!/
+
+
+    })*/
+    .constant('ACCESS_LEVELS', {
+        pub: 1,
+        user: 2
+    })
+    .config(function($stateProvider, $urlRouterProvider, $httpProvider, ACCESS_LEVELS) {
+
+
+
+        /*// Interceptor
+        var interceptor = function ($q, $rootScope, Auth) {
+
+            return {
+
+                'request': function (req) {
+
+                    req.params = req.params || {};
+                    if(Session.isAuthenticated() && !req.params.token){
+
+                        req.params.token = Auth.getToken();
+
+                    }
+
+                    return req;
+
+                },
+                'requestError': function (reqError) {
+
+                    return reqError;
+
+                },
+
+                'response':function (resp) {
+
+                    if(resp.config.url === '/api/login'){
+
+                        Auth.setToken(resp.data.token);
+
+                    }
+
+                    return resp;
+
+                },
+                'responseError': function (rejection) {
+
+                    switch(rejectionStatus) {
+
+                        case 401:
+                            if(rejection.config.url !== 'api/login')
+                                $rootScope
+                                .$broadcast('auth:loginRequired');
+                            break;
+
+                        case 403:
+                            $rootScope
+                                .$broadcast('auth:forbidden');
+                            break;
+
+                        case 404:
+                            $rootScope
+                                .$broadcast('page:notFound');
+                            break;
+
+                        case 500:
+                            $rootScope
+                                .broadcast('server:error');
+                            break;
+
+                    }
+
+                    return $q.reject(rejection);
+
+                }
+
+            }
+
+        };
+
+        $httpProvider
+            .interceptors.push(interceptor);*/
+
+
+
+
+
+
 
     $stateProvider.state('test', {
         url: '/test',
-        templateUrl: 'partial/test/test.html'
+        templateUrl: 'partial/test/test.html',
+        access_level: ACCESS_LEVELS.pub
     });
     $stateProvider.state('parse', {
         url: '/parse',
-        templateUrl: 'partial/parse/parse.html'
+        templateUrl: 'partial/parse/parse.html',
+        access_level: ACCESS_LEVELS.user
     });
     $stateProvider.state('filters', {
         url: '/filters',
@@ -64,7 +229,12 @@ angular.module('angularLearn')
         templateUrl: 'partial/module-loading/module-loading.html'
     });
 
-    /* Add New States Above */
+    $stateProvider.state('tdd', {
+        url: '/tdd',
+        templateUrl: 'partial/tdd/tdd.html'
+    });
+
+    /!* Add New States Above *!/
     $urlRouterProvider.otherwise('/');
 
 });

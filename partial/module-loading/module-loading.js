@@ -52,17 +52,21 @@ angular.module('angularLearn')
         };
 
     })
-    .provider('githubService', function ($http) {
+    /*.provider('githubService', function () {
 
-        var githubUrl = 'https://github.com'
+        var githubUrl = 'https://github.com';
 
-        setGithubUrl: function (url) {
+        /!*setGithubUrl: function (url) {
 
-            if ( url ) { githubUrl = url }
+            if (url) {
+                githubUrl = url
+            }
 
         }
         method: JSONP,
-        $get: function($http) {
+            $get
+        :
+        function ($http) {
             self = this;
             return $http({
 
@@ -71,8 +75,9 @@ angular.module('angularLearn')
 
             });
         }
+    }*!/
 
-    })
+    })*/
     .controller('SomeCtrl', function ($scope, $timeout, greeter, githubService) {
 
         $scope.setUsername = githubService.setUsername;

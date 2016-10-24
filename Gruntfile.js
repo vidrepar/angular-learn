@@ -164,7 +164,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    //Imagemin has issues on Windows.  
+    //Imagemin has issues on Windows.
     //To enable imagemin:
     // - "npm install grunt-contrib-imagemin"
     // - Comment in this section
@@ -192,7 +192,8 @@ module.exports = function (grunt) {
         singleRun: true
       },
       all_tests: {
-        browsers: ['PhantomJS','Chrome','Firefox']
+        browsers: ['Chrome']
+        //browsers: ['PhantomJS','Chrome','Firefox']
       },
       during_watch: {
         browsers: ['PhantomJS']
